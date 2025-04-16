@@ -8,3 +8,4 @@ bio-link/
 ├── styles.css        # CSS styles
 ├── script.js         # JavaScript for interactivity
 └── README.md         # This file
+```

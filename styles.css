@@ -11,12 +11,14 @@ body {
   justify-content: center;
   align-items: center;
   background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-  overflow: hidden;
+  overflow-x: hidden;
+  padding: 1rem;
 }
 
 .container {
-  max-width: 450px;
-  padding: 20px;
+  width: 90%;
+  max-width: 600px;
+  padding: 1.5rem;
   text-align: center;
   position: relative;
   z-index: 1;
@@ -25,7 +27,7 @@ body {
 .profile-card {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 25px;
-  padding: 40px;
+  padding: clamp(1.5rem, 4vw, 3rem);
   backdrop-filter: blur(20px);
   border: 2px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
@@ -48,9 +50,9 @@ body {
 
 .profile-img-wrapper {
   position: relative;
-  width: 160px;
-  height: 160px;
-  margin: 0 auto 25px;
+  width: clamp(120px, 25vw, 200px);
+  height: clamp(120px, 25vw, 200px);
+  margin: 0 auto clamp(1rem, 3vw, 2rem);
   perspective: 1000px;
 }
 
@@ -76,11 +78,7 @@ body {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background: linear-gradient(
-    45deg,
-    rgba(255, 0, 255, 0.2),
-    rgba(0, 255, 255, 0.2)
-  );
+  background: linear-gradient(45deg, rgba(255, 0, 255, 0.2), rgba(0, 255, 255, 0.2));
   filter: blur(15px);
   z-index: 2;
   animation: holoPulse 3s ease-in-out infinite;
@@ -90,8 +88,8 @@ body {
   position: absolute;
   top: -10px;
   left: -10px;
-  width: 180px;
-  height: 180px;
+  width: calc(100% + 20px);
+  height: calc(100% + 20px);
   border-radius: 50%;
   background: radial-gradient(circle, rgba(255, 0, 255, 0.3), transparent);
   filter: blur(30px);
@@ -101,22 +99,21 @@ body {
 
 h1 {
   color: #fff;
-  font-size: 30px;
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
   font-weight: 800;
   font-family: "Orbitron", sans-serif;
-  margin-bottom: 5px;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
-    0 0 20px rgba(255, 0, 255, 0.5);
+  margin-bottom: clamp(0.3rem, 1vw, 0.5rem);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 0, 255, 0.5);
 }
 
 .web-developer {
   display: block;
   color: #0ff;
-  font-size: 14px;
+  font-size: clamp(0.75rem, 2.5vw, 1rem);
   font-weight: 600;
   font-family: "Orbitron", sans-serif;
   text-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(0, 255, 255, 0.5);
-  margin-bottom: 15px;
+  margin-bottom: clamp(0.5rem, 2vw, 1rem);
   position: relative;
   overflow: hidden;
   white-space: nowrap;
@@ -148,16 +145,16 @@ h1 {
 }
 
 .bio-text {
-  margin-bottom: 35px;
+  margin-bottom: clamp(1rem, 3vw, 2rem);
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: clamp(0.3rem, 1vw, 0.5rem);
 }
 
 .bio-line {
   color: #fff;
-  font-size: 14px;
+  font-size: clamp(0.75rem, 2.2vw, 0.875rem);
   font-weight: 600;
   font-family: "Poppins", sans-serif;
   text-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(0, 255, 255, 0.5);
@@ -165,35 +162,27 @@ h1 {
   animation: slideIn 0.5s ease-in forwards;
 }
 
-.bio-line:nth-child(1) {
-  animation-delay: 0.2s;
-}
-.bio-line:nth-child(2) {
-  animation-delay: 0.4s;
-}
-.bio-line:nth-child(3) {
-  animation-delay: 0.6s;
-}
-.bio-line:nth-child(4) {
-  animation-delay: 0.8s;
-}
+.bio-line:nth-child(1) { animation-delay: 0.2s; }
+.bio-line:nth-child(2) { animation-delay: 0.4s; }
+.bio-line:nth-child(3) { animation-delay: 0.6s; }
+.bio-line:nth-child(4) { animation-delay: 0.8s; }
 
 .social-links {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: clamp(0.5rem, 2vw, 1.125rem);
 }
 
 .social-link {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 15px;
+  padding: clamp(0.75rem, 2vw, 1rem);
   border-radius: 15px;
   text-decoration: none;
   color: white;
   font-weight: 600;
-  font-size: 17px;
+  font-size: clamp(0.875rem, 2.5vw, 1.125rem);
   position: relative;
   overflow: hidden;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -219,12 +208,7 @@ h1 {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.4),
-    transparent
-  );
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
   transition: 0.7s;
   z-index: 1;
 }
@@ -240,7 +224,7 @@ h1 {
   left: 50%;
   transform: translate(-50%, -50%);
   color: rgba(255, 255, 255, 0.2);
-  font-size: 2em;
+  font-size: clamp(1.25rem, 3vw, 1.875rem);
   font-weight: 800;
   opacity: 0;
   transition: opacity 0.5s;
@@ -263,14 +247,7 @@ h1 {
 }
 
 .instagram {
-  background: linear-gradient(
-    45deg,
-    #f09433,
-    #e6683c,
-    #dc2743,
-    #cc2366,
-    #bc1888
-  );
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
 }
 .facebook {
   background: linear-gradient(45deg, #3b5998, #8b9dc3);
@@ -286,9 +263,9 @@ h1 {
 }
 
 .icon {
-  width: 30px;
-  height: 30px;
-  margin-right: 15px;
+  width: clamp(1.25rem, 4vw, 1.875rem);
+  height: clamp(1.25rem, 4vw, 1.875rem);
+  margin-right: clamp(0.5rem, 1.5vw, 1rem);
   transition: all 0.5s ease;
   filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
   animation: iconPulse 2s ease-in-out infinite;
@@ -320,21 +297,11 @@ h1 {
   opacity: 0;
 }
 
-.instagram .icon:hover {
-  filter: drop-shadow(0 0 15px #e6683c);
-}
-.facebook .icon:hover {
-  filter: drop-shadow(0 0 15px #3b5998);
-}
-.github .icon:hover {
-  filter: drop-shadow(0 0 15px #333);
-}
-.tiktok .icon:hover {
-  filter: drop-shadow(0 0 15px #fe2c55);
-}
-.zalo .icon:hover {
-  filter: drop-shadow(0 0 15px #0068ff);
-}
+.instagram .icon:hover { filter: drop-shadow(0 0 15px #e6683c); }
+.facebook .icon:hover { filter: drop-shadow(0 0 15px #3b5998); }
+.github .icon:hover { filter: drop-shadow(0 0 15px #333); }
+.tiktok .icon:hover { filter: drop-shadow(0 0 15px #fe2c55); }
+.zalo .icon:hover { filter: drop-shadow(0 0 15px #0068ff); }
 
 .particles {
   position: fixed;
@@ -347,128 +314,231 @@ h1 {
 }
 
 @keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
 }
 
 @keyframes holoPulse {
-  0%,
-  100% {
-    transform: scale(1);
-    opacity: 0.5;
-  }
-  50% {
-    transform: scale(1.1);
-    opacity: 0.8;
-  }
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.1); opacity: 0.8; }
 }
 
 @keyframes neonPulse {
-  0%,
-  100% {
-    opacity: 0.3;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.6;
-    transform: scale(1.05);
-  }
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.05); }
 }
 
 @keyframes holoRotate {
-  0% {
-    transform: rotate(45deg);
-  }
-  100% {
-    transform: rotate(405deg);
-  }
+  0% { transform: rotate(45deg); }
+  100% { transform: rotate(405deg); }
 }
 
 @keyframes ripple {
-  0% {
-    width: 0;
-    height: 0;
-    opacity: 0.5;
-  }
-  100% {
-    width: 200px;
-    height: 200px;
-    opacity: 0;
-  }
+  0% { width: 0; height: 0; opacity: 0.5; }
+  100% { width: 200px; height: 200px; opacity: 0; }
 }
 
 @keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes iconPulse {
-  0%,
-  100% {
-    transform: scale(1);
-    opacity: 0.8;
-  }
-  50% {
-    transform: scale(1.1);
-    opacity: 1;
-  }
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.1); opacity: 1; }
 }
 
 @keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
+  from { width: 0; }
+  to { width: 100%; }
 }
 
 @keyframes blink {
-  50% {
-    opacity: 0;
-  }
+  50% { opacity: 0; }
 }
 
+/* Điện thoại nhỏ (dưới 480px) */
 @media (max-width: 480px) {
   .container {
-    padding: 10px;
+    padding: 0.5rem;
   }
 
   .profile-card {
-    padding: 30px;
+    padding: 1rem;
+  }
+
+  .profile-img-wrapper {
+    width: clamp(100px, 30vw, 120px);
+    height: clamp(100px, 30vw, 120px);
   }
 
   h1 {
-    font-size: 26px;
+    font-size: clamp(1.25rem, 4.5vw, 1.5rem);
   }
 
   .web-developer {
-    font-size: 12px;
+    font-size: clamp(0.625rem, 2.5vw, 0.75rem);
   }
 
   .bio-line {
-    font-size: 12px;
+    font-size: clamp(0.625rem, 2.5vw, 0.75rem);
     line-height: 1.5;
   }
 
+  .social-links {
+    gap: 0.5rem;
+  }
+
   .social-link {
-    padding: 12px;
-    font-size: 15px;
+    padding: 0.5rem;
+    font-size: clamp(0.75rem, 2.5vw, 0.875rem);
   }
 
   .icon {
-    width: 26px;
-    height: 26px;
+    width: clamp(1rem, 4vw, 1.25rem);
+    height: clamp(1rem, 4vw, 1.25rem);
+  }
+}
+
+/* Điện thoại lớn và máy tính bảng (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .profile-card {
+    padding: 1.5rem;
+  }
+
+  .profile-img-wrapper {
+    width: clamp(120px, 25vw, 150px);
+    height: clamp(120px, 25vw, 150px);
+  }
+
+  h1 {
+    font-size: clamp(1.5rem, 4vw, 1.75rem);
+  }
+
+  .web-developer {
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
+  }
+
+  .bio-line {
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
+  }
+
+  .social-link {
+    padding: 0.75rem;
+  }
+}
+
+/* Laptop và màn hình vừa (769px - 1200px) */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .container {
+    max-width: 550px;
+  }
+
+  .profile-card {
+    padding: 2rem;
+  }
+
+  .profile-img-wrapper {
+    width: 160px;
+    height: 160px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .web-developer {
+    font-size: 0.875rem;
+  }
+
+  .bio-line {
+    font-size: 0.875rem;
+  }
+
+  .social-link {
+    font-size: 1rem;
+  }
+}
+
+/* Màn hình lớn (1201px trở lên, bao gồm 24 inch) */
+@media (min-width: 1201px) {
+  .container {
+    max-width: 650px;
+  }
+
+  .profile-card {
+    padding: 3rem;
+  }
+
+  .profile-img-wrapper {
+    width: 200px;
+    height: 200px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .web-developer {
+    font-size: 1rem;
+  }
+
+  .bio-line {
+    font-size: 1rem;
+  }
+
+  .social-links {
+    gap: 1.5rem;
+  }
+
+  .social-link {
+    padding: 1rem;
+    font-size: 1.25rem;
+  }
+
+  .icon {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+/* Màn hình siêu lớn (1920px trở lên) */
+@media (min-width: 1920px) {
+  .container {
+    max-width: 700px;
+  }
+
+  .profile-card {
+    padding: 3.5rem;
+  }
+
+  .profile-img-wrapper {
+    width: 220px;
+    height: 220px;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  .web-developer {
+    font-size: 1.125rem;
+  }
+
+  .bio-line {
+    font-size: 1.125rem;
+  }
+
+  .social-link {
+    font-size: 1.5rem;
+  }
+
+  .icon {
+    width: 2.5rem;
+    height: 2.5rem;
   }
 }
